@@ -1,0 +1,7 @@
+<div>
+    <h2>{{ product.name |uppercase}}</h2>
+    <p>Descrição: {{ product.description }}</p>
+    <p>Preço: {{ product.price |currency:'BRL'}}</p>
+    <p>Data de lançamento: {{ product.launchDate | date:'dd/MM/yyyy' }}</p>
+    <p>Disponível: {{ product.available | availability}}</p>
+</div>

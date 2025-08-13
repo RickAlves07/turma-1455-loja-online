@@ -1,0 +1,16 @@
+<h2>Nossos produtos</h2>
+
+@if(selectedProduct) {
+    <button (click)="clearSelection()">Limpar Seleção</button>
+}
+
+<div>
+    @for (product of products; track product.id) {
+        <button (click)="selectProduct(product)">{{ product.name }}</button>
+    }
+</div>
+
+<hr>
+@if(selectedProduct) {
+    <app-product-detail [product]="selectedProduct"></app-product-detail>
+}
