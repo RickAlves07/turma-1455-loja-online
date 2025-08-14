@@ -6,7 +6,9 @@
 
 <div>
     @for (product of products; track product.id) {
-        <button (click)="selectProduct(product)">{{ product.name }}</button>
+        <button (click)="selectProduct(product)">
+          {{ product.name }}
+        </button>
     }
 </div>
 
