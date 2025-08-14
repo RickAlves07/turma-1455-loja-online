@@ -2,30 +2,28 @@
 
 Aula 3 12.08.2025
 
-Objetivo: Vamos criar juntos uma página que mostra detalhes de um produto, utilizando Lifecycle Hooks
-para monitorar mudanças e Pipes para formatar os dados. Os passos serão os seguintes:
-● Setup do projeto
-● Criando o Serviço e os Componentes
-● Construindo a lista de produtos (Componente Pai)
-● Construindo detalhes de um produto (Componente filho)
-● Usar pipes nativos de data e moeda
-● Criar um Pipe personalizado para informação de estoque
+Objetivo: Vamos criar juntos uma página que mostra detalhes de um produto, utilizando Lifecycle Hooks para monitorar mudanças e Pipes para formatar os dados. Os passos serão os seguintes: </br>
+● Setup do projeto<br>
+● Criando o Serviço e os Componentes<br>
+● Construindo a lista de produtos (Componente Pai)<br>
+● Construindo detalhes de um produto (Componente filho)<br>
+● Usar pipes nativos de data e moeda<br>
+● Criar um Pipe personalizado para informação de estoque<br>
 
-Agora é com vocês: Exibindo Preços Promocionais
-Nossa loja precisa de uma funcionalidade essencial: promoções! Vamos evoluir nossa página de detalhes
-para que ela possa exibir um preço com desconto para produtos selecionados e um selo de "Em Promoção"
-para chamar a atenção do cliente.
-Passos:
-● Em seu ProductService adicione em alguns (pra gente ver a diferença) as propriedades onSale:
-boolean e discount: 0.15 (15% de desconto).
-● Calcule o desconto usando ngOnChanges
-● Crie uma Pipe customizada para usar o selo "Em Promoção!"
-● Atualize o template adicionando a lógica de exibição de preço.
-Bônus:
-Modifique o pipe saleBadge para que ele possa receber um texto customizado como argumento.
-● Se nenhum texto for passado, ele deve usar "EM PROMOÇÃO!" como padrão.
-● Se um texto for passado (ex: {{ product.onSale | saleBadge:'OFERTA ESPECIAL!' }}), ele deve
-exibir esse novo texto.
+Agora é com vocês: Exibindo Preços Promocionais<br>
+Nossa loja precisa de uma funcionalidade essencial: promoções! Vamos evoluir nossa página de detalhes para que ela possa exibir um preço com desconto para produtos selecionados e um selo de "Em Promoção" para chamar a atenção do cliente.<br>
+
+Passos:<br>
+● Em seu ProductService adicione em alguns (pra gente ver a diferença) as propriedades onSale:<br>
+boolean e discount: 0.15 (15% de desconto).<br>
+● Calcule o desconto usando ngOnChanges<br>
+● Crie uma Pipe customizada para usar o selo "Em Promoção!"<br>
+● Atualize o template adicionando a lógica de exibição de preço.<br>
+
+Bônus:<br>
+Modifique o pipe saleBadge para que ele possa receber um texto customizado como argumento.<br>
+● Se nenhum texto for passado, ele deve usar "EM PROMOÇÃO!" como padrão.<br>
+● Se um texto for passado (ex: {{ product.onSale | saleBadge:'OFERTA ESPECIAL!' }}), ele deve exibir esse novo texto.<br>
 Dica: Pesquise como adicionar argumentos (...args: any[]) ao método transform de um pipe
 
 
