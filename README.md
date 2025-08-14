@@ -1,5 +1,34 @@
 # LojaProdutos
 
+Aula 3 12.08.2025
+
+Objetivo: Vamos criar juntos uma página que mostra detalhes de um produto, utilizando Lifecycle Hooks
+para monitorar mudanças e Pipes para formatar os dados. Os passos serão os seguintes:
+● Setup do projeto
+● Criando o Serviço e os Componentes
+● Construindo a lista de produtos (Componente Pai)
+● Construindo detalhes de um produto (Componente filho)
+● Usar pipes nativos de data e moeda
+● Criar um Pipe personalizado para informação de estoque
+
+Agora é com vocês: Exibindo Preços Promocionais
+Nossa loja precisa de uma funcionalidade essencial: promoções! Vamos evoluir nossa página de detalhes
+para que ela possa exibir um preço com desconto para produtos selecionados e um selo de "Em Promoção"
+para chamar a atenção do cliente.
+Passos:
+● Em seu ProductService adicione em alguns (pra gente ver a diferença) as propriedades onSale:
+boolean e discount: 0.15 (15% de desconto).
+● Calcule o desconto usando ngOnChanges
+● Crie uma Pipe customizada para usar o selo "Em Promoção!"
+● Atualize o template adicionando a lógica de exibição de preço.
+Bônus:
+Modifique o pipe saleBadge para que ele possa receber um texto customizado como argumento.
+● Se nenhum texto for passado, ele deve usar "EM PROMOÇÃO!" como padrão.
+● Se um texto for passado (ex: {{ product.onSale | saleBadge:'OFERTA ESPECIAL!' }}), ele deve
+exibir esse novo texto.
+Dica: Pesquise como adicionar argumentos (...args: any[]) ao método transform de um pipe
+
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
 
 ## Development server
