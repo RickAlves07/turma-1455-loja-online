@@ -17,7 +17,8 @@ export class ProductService {
         launchDate: new Date('2025-09-01'),
         available: true,
 		    onSale: true,
-        discount: 0.15
+        discount: 0.15,
+        imgUrl: 'https://picsum.photos/200'
       },
       {
         id: 2,
@@ -28,6 +29,7 @@ export class ProductService {
         available: false,
         onSale: false,
         discount: 0,
+        imgUrl: 'https://picsum.photos/200'
       },
       {
         id: 3,
@@ -37,17 +39,19 @@ export class ProductService {
         launchDate: new Date('2025-09-25'),
         available: true,
         onSale: true,
-        discount: 0.15
+        discount: 0.15,
+        imgUrl: 'https://picsum.photos/200'
       },
       {
         id: 4,
         name: 'Produto 4',
         description: 'Descrição do produto 4',
-        price: 50,
+        price: 150,
         launchDate: new Date('2025-01-06'),
         available: true,
         onSale: true,
-        discount: 0.15
+        discount: 0.20,
+        imgUrl: 'https://picsum.photos/200'
       }
     ]
   }

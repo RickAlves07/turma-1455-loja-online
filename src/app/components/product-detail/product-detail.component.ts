@@ -12,6 +12,7 @@ import { SaleBadgePipe } from '../../pipes/sale-badge.pipe';
 })
 export class ProductDetailComponent implements OnChanges {
   @Input() product: any;
+  isZoomed = false;
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['product']) {

@@ -1,30 +1,26 @@
 # LojaProdutos
 
-Aula 3 12.08.2025
+Aula 4 14.08.2025
 
-Objetivo: Vamos criar juntos uma página que mostra detalhes de um produto, utilizando Lifecycle Hooks para monitorar mudanças e Pipes para formatar os dados. Os passos serão os seguintes: </br>
-● Setup do projeto<br>
-● Criando o Serviço e os Componentes<br>
-● Construindo a lista de produtos (Componente Pai)<br>
-● Construindo detalhes de um produto (Componente filho)<br>
-● Usar pipes nativos de data e moeda<br>
-● Criar um Pipe personalizado para informação de estoque<br>
+Objetivo: Pegar o projeto da loja online e torná-lo completamente responsivo. Os passos serão os<br>
+seguintes:<br>
+● Instalando e Configurando o Bootstrap<br>
+● Estruturando o Layout Principal com o Grid<br>
+● Aplicando Responsividade na Lista de Produtos (Componente Pai)<br>
+● Refinando os Detalhes do Produto com Flexbox e Media Queries<br>
 
-Agora é com vocês: Exibindo Preços Promocionais<br>
-Nossa loja precisa de uma funcionalidade essencial: promoções! Vamos evoluir nossa página de detalhes para que ela possa exibir um preço com desconto para produtos selecionados e um selo de "Em Promoção" para chamar a atenção do cliente.<br>
+Agora é com vocês: Atividade Prática: Adicionando Imagem e Melhorando o Layout do Produto<br>
+Nossa página de detalhes do produto está funcional, mas um pouco sem graça. Uma loja online de verdade<br>
+precisa de imagens! Vamos adicionar uma imagem para cada produto e organizar o layout para que a imagem e as informações fiquem lado a lado em telas grandes e uma embaixo da outra em telas de celular.<br>
 
 Passos:<br>
-● Em seu ProductService adicione em alguns (pra gente ver a diferença) as propriedades onSale:<br>
-boolean e discount: 0.15 (15% de desconto).<br>
-● Calcule o desconto usando ngOnChanges<br>
-● Crie uma Pipe customizada para usar o selo "Em Promoção!"<br>
-● Atualize o template adicionando a lógica de exibição de preço.<br>
-
-Bônus:<br>
-Modifique o pipe saleBadge para que ele possa receber um texto customizado como argumento.<br>
-● Se nenhum texto for passado, ele deve usar "EM PROMOÇÃO!" como padrão.<br>
-● Se um texto for passado (ex: {{ product.onSale | saleBadge:'OFERTA ESPECIAL!' }}), ele deve exibir esse novo texto.<br>
-Dica: Pesquise como adicionar argumentos (...args: any[]) ao método transform de um pipe
+● Em seu ProductService adicione o parâmetro imgUrl e use o site https://picsum.photos/.<br>
+● Reestruture visualmente o Detalhe do Produto<br>
+● Aplicando a Mágica do Flexbox e Media Queries onde achar conveniente.<br>
+Bônus:<br><br>
+Use o que você aprendeu sobre Property Binding e Event Binding.<br>
+1. Adicione uma classe zoomed no CSS que aumenta ligeiramente o tamanho da imagem (transform: scale(1.05);).<br>
+2. Use os eventos (mouseenter) e (mouseleave) na tag <img> para adicionar e remover dinamicamente a classe zoomed usando [class.zoomed], criando um efeito de zoom sutil quando o usuário passa o mouse sobre a imagem.<br>
 
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
