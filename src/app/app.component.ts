@@ -8,5 +8,5 @@ import { ProductListComponent } from './components/product-list/product-list.com
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'loja-produtos';
+  title = 'Minha Loja de Produtos';
 }

@@ -1,16 +1,31 @@
-<h2>Nossos produtos</h2>
-
-@if(selectedProduct) {
-    <button (click)="clearSelection()">Limpar Seleção</button>
-}
-
-<div>
-    @for (product of products; track product.id) {
-        <button (click)="selectProduct(product)">{{ product.name }}</button>
-    }
+<div class="row">
+  <div class="col-md-4">
+    <h2>Lista de Produtos</h2>
+      <div class="list-group">
+        @for (product of products; track product.id) {
+            <button
+            type="button"
+            (click)="selectProduct(product)"
+            class="list-group-item list-group-item-action"
+            [class.active]="selectedProduct?.id === product.id">
+            {{ product.name }}
+          </button>
+        }
+      </div>
+    </div>
+    <div class="col-md-8">
+      @if(selectedProduct) {
+        <app-product-detail [product]="selectedProduct"></app-product-detail>
+      } @else {
+        <div class="alert alert-info">
+          Selecione um produto para ver os detalhes.
+        </div>
+      }
+  </div>
 </div>
 
-<hr>
-@if(selectedProduct) {
-    <app-product-detail [product]="selectedProduct"></app-product-detail>
-}
+<!-- @if(selectedProduct) {
+    <button (click)="clearSelection()">Limpar Seleção</button>
+} -->
+
+

@@ -40,7 +40,7 @@ export class ProductService {
         discount: 0.15
       },
       {
-        id: 3,
+        id: 4,
         name: 'Produto 4',
         description: 'Descrição do produto 4',
         price: 50,
