@@ -1,38 +1,23 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Product } from '../interfaces/product.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor() { }
+  private http = inject(HttpClient);
+  private apiUrl = 'https://fakestoreapi.com/products';
 
-  getProducts() {
-    return [
-      {
-        id: 1,
-        name: 'Produto 1',
-        description: 'Descrição do produto 1',
-        price: 100,
-        launchDate: new Date('2025-09-01'),
-        available: true
-      },
-      {
-        id: 2,
-        name: 'Produto 2',
-        description: 'Descrição do produto 2',
-        price: 200.50,
-        launchDate: new Date('2025-09-15'),
-        available: false
-      },
-      {
-        id: 3,
-        name: 'Produto 3',
-        description: 'Descrição do produto 3',
-        price: 50,
-        launchDate: new Date('2025-09-25'),
-        available: true
-      }
-    ]
+  // Retorna um observable com a lista de produtos
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiUrl);
+  }
+
+  // Retorna um observable com os detalhes de um produto específico
+  getProductById(id: number): Observable<Product> {
+    return this.http.get<Product>(`${this.apiUrl}/${id}`);
   }
 }

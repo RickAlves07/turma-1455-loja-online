@@ -1,13 +1,12 @@
 <div class="card mt-4">
     <div class="card-header">
-        <h3 class="card-title">{{ product.name |uppercase}}</h3>
+        <h3 class="card-title">{{ product()?.title | uppercase}}</h3>
     </div>
-    <div class="card-body">      
-        <p class="card-text">Descrição: {{ product.description }}</p>
-        <p class="card-text">Preço: {{ product.price |currency:'BRL'}}</p>
-        <p class="card-text">Data de lançamento: {{ product.launchDate | date:'dd/MM/yyyy' }}</p>
+    <div class="card-body"> 
+        <img [src]="product()?.image" alt="{{ product()?.title}}" width="150" />
+        <p class="card-text">Descrição: {{ product()?.description }}</p>  
     </div>
     <div class="card-footer">
-        <p>Disponível: {{ product.available | availability}}</p>
+        <p class="card-text">Preço: {{ product()?.price |currency:'BRL'}}</p>
     </div>
 </div>

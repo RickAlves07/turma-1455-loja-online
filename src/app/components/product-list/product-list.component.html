@@ -1,25 +1,17 @@
+
+<h2>Lista de Produtos</h2>
 <div class="row">
-    <div class="col-md-4">
-        <h2>Lista de Produtos</h2>
-        <div class="list-group">
-            @for (product of products; track product.id) {
-                <button
-                    type="button"
-                    class="list-group-item list-group-item-action"
-                    [class.active]="selectedProduct?.id === product.id"
-                    (click)="selectProduct(product)">
-                    {{ product.name }}
-                </button>
-            }
-        </div>
-    </div>
-    <div class="col-md-8">
-        @if (selectedProduct) {
-            <app-product-detail [product]="selectedProduct"></app-product-detail>
-        } @else {
-            <div class="alert alert-info">
-                Selecione um produto para ver os detalhes.
+    @for (product of products(); track product.id) {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" [src]="product.image" alt="{{ product.title }}">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <a [routerLink]="['/product', product.id]" class="btn btn-primary mt-auto">
+                        Ver Detalhes
+                    </a>
+                </div>
             </div>
-        }
-    </div>
+        </div>  
+    }
 </div>

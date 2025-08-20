@@ -1,24 +1,24 @@
-import { CurrencyPipe, DatePipe, UpperCasePipe } from '@angular/common';
-import { Component, Input, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
-import { AvailabilityPipe } from '../../pipes/availability.pipe';
-
+import { CurrencyPipe, UpperCasePipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map, switchMap } from 'rxjs/operators';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CurrencyPipe, DatePipe, UpperCasePipe, AvailabilityPipe],
+  imports: [CurrencyPipe, UpperCasePipe],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss'
 })
-export class ProductDetailComponent implements OnChanges {
-  @Input() product: any;
+export class ProductDetailComponent {
+  private route = inject(ActivatedRoute);
+  private productService = inject(ProductService);
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['product']) {
-      console.log('Produto mudou:', changes['product'].currentValue);
-    }
-  }
-
-  ngOnDestroy(): void {
-    console.log('Componente de detalhes de produto foi destruído', 'color: red; font-weight: bold;');
-  }
+  public product = toSignal (
+    this.route.params.pipe(
+      map(params => params['id']),
+      switchMap(id => this.productService.getProductById(id))
+    )
+  );
 }
