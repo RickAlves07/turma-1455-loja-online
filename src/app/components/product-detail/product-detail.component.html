@@ -5,8 +5,9 @@
     <div class="card-body"> 
         <img [src]="product()?.image" alt="{{ product()?.title}}" width="150" />
         <p class="card-text">Descrição: {{ product()?.description }}</p>  
+        <p class="card-text">Preço: {{ product()?.price |currency:'BRL'}}</p>
     </div>
     <div class="card-footer">
-        <p class="card-text">Preço: {{ product()?.price |currency:'BRL'}}</p>
+        <button class="btn btn-primary" (click)="addToCart()">Adicionar ao carrinho</button>
     </div>
 </div>
