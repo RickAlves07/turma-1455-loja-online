@@ -1,0 +1,8 @@
+<ul>
+  @for (item of cartItems$ | async ; track item.productId) {
+  <li>
+    {{ item.title }} - R$ {{ item.price }}
+    <button class="btn btn-danger" (click)="removeItem(item.productId)">Remover</button>
+  </li>
+  }
+</ul>

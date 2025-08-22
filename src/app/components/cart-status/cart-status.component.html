@@ -4,5 +4,11 @@
     </div>
     <div class="card-body">
         <p class="card-text">Itens no carrinho: {{ cartItemCount$ | async }}</p>
+        <button class="btn btn-primary" (click)="openCart()">{{ isCartOpened ? 'Fechar Carrinho' : 'Abrir Carrinho'}}</button>
     </div>
+    @if (isCartOpened) {
+      <div>
+        <app-shopping-cart></app-shopping-cart>
+    </div>
+    }
 </div>

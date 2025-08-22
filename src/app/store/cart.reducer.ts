@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { addProductToCart } from './cart.actions';
+import { addProductToCart, removeProductFromCart } from './cart.actions';
 import { initialCartState } from './cart.state';
 
 export const cartReducer = createReducer(
@@ -11,5 +11,14 @@ export const cartReducer = createReducer(
             items: newItems,
             total: newItems.reduce((sum, item) => sum + item.price, 0)
         };
-    })
+    }),
+
+    on(removeProductFromCart, (state, { productId }) => {
+    const updatedItems = state.items.filter(item => item.productId !== productId);
+    return {
+      ...state,
+      items: updatedItems,
+      total: updatedItems.reduce((sum, item) => sum + item.price, 0)
+    };
+  })
 )
