@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Checkout</h2>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="nomeCompleto" class="form-label">Nome Completo</label>
+            <input type="text" id="nomeCompleto" class="form-control" formControlName="nomeCompleto" />
+            @if (checkoutForm.get('nomeCompleto')?.invalid && checkoutForm.get('nomeCompleto')?.touched) {
+                <div class="text-danger">Nome Completo é obrigatório.</div>
+            }
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" formControlName="email" />
+            @if (checkoutForm.get('email')?.invalid && checkoutForm.get('email')?.touched) {
+                <div class="text-danger">Email é obrigatório e deve ser válido.</div>
+            }
+        </div>
+        <div class="mb-3">
+            <label for="endereco" class="form-label">Endereço</label>
+            <input type="text" id="endereco" class="form-control" formControlName="endereco" />
+            @if (checkoutForm.get('endereco')?.invalid && checkoutForm.get('endereco')?.touched) {
+                <div class="text-danger">Endereço é obrigatório.</div>
+            }
+        </div>
+        <div class="mb-3">
+            <label for="formaPagamento" class="form-label">Forma de Pagamento</label>
+            <select id="formaPagamento" class="form-select" formControlName="formaPagamento">
+                <option value="" disabled>Selecione uma forma de pagamento</option>
+                <option value="cartao">Cartão de Crédito</option>
+                <option value="boleto">Boleto Bancário</option>
+                <option value="pix">PIX</option>
+            </select>
+            @if (checkoutForm.get('formaPagamento')?.invalid && checkoutForm.get('formaPagamento')?.touched) {
+                <div class="text-danger">Forma de Pagamento é obrigatório.</div>
+            }    
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="checkoutForm.invalid">Finalizar Compra</button>
+    </form>
+</div>
